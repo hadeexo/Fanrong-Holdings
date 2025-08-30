@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+@import "tailwindcss";
+
+
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', serif;
+  }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+  }
+}
+
+
+
+:root {
+ 
+  --blue-light: #00AEEF;
+  --blue-medium: #007CC3;
+  --blue-dark: #3A3B98;
+  --purple-main: #3B2D85;
+  --gray-light: #D3D3D3;
+  --gray-medium: #A0A0A0;
+  --gray-dark: #686868;
+}
+
+button {
+  cursor: pointer;
+  transition: .5s ease;
+}
+
+button:hover{
+
+  border: none;
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
