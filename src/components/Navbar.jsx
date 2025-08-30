@@ -1,25 +1,17 @@
 import { NavLink, Link, useLocation } from "react-router-dom";
 import { assets } from "../assets/assets";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const location = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
     { label: "HOME", path: "/" },
-    {
-      label: "ABOUT",
-      path: "/about",
-      children: [
-        { label: "The Company", path: "/about" },
-        { label: "Our Board", path: "/about/board" },
-      ],
-    },
-
-    {
-      label: "SERVICES",
-      path: "/service",
-    },
+    { label: "ABOUT", path: "/about" },
+    { label: "SERVICES", path: "/service" },
     { label: "CONTACT", path: "/contact" },
   ];
 
@@ -31,7 +23,6 @@ const Navbar = () => {
       transition: {
         duration: 0.6,
         ease: "easeOut",
-        when: "beforeChildren",
         staggerChildren: 0.15,
       },
     },
@@ -47,30 +38,20 @@ const Navbar = () => {
       variants={navVariants}
       initial="hidden"
       animate="visible"
-      className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md flex items-center justify-between py-5 px-10 font-medium"
+      className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md flex items-center justify-between py-5 px-6 md:px-10 font-medium"
     >
+
       <Link to="/">
-        <img src={assets.logo} className="w-13" alt="Logo" />
+        <img src={assets.logo} className="w-12" alt="Logo" />
       </Link>
 
+    
       <motion.ul
-        className="hidden sm:flex gap-5 text-sm text-gray-700"
-        initial="hidden"
-        animate="visible"
-        variants={{
-          visible: {
-            transition: {
-              staggerChildren: 0.55,
-            },
-          },
-        }}
+        className="hidden sm:flex gap-6 text-sm text-gray-700"
+        variants={navVariants}
       >
-        {navLinks.map(({ label, path, children }) => (
-          <motion.li
-            key={label}
-            variants={linkVariants}
-            className="relative group"
-          >
+        {navLinks.map(({ label, path }) => (
+          <motion.li key={label} variants={linkVariants} className="relative group">
             <NavLink
               to={path}
               className={({ isActive }) =>
@@ -79,7 +60,7 @@ const Navbar = () => {
                 }`
               }
             >
-              <p className="relative group">
+              <span className="relative group">
                 {label}
                 <span
                   className={`absolute left-0 -bottom-1 h-[2px] w-full bg-[#007CC3] transition-all duration-300 ease-in-out ${
@@ -88,26 +69,41 @@ const Navbar = () => {
                       : "scale-x-0 group-hover:scale-x-100"
                   } origin-left`}
                 ></span>
-              </p>
+              </span>
             </NavLink>
-
-            {children && (
-              <ul className="absolute top-8 left-0 bg-white shadow-md rounded-md opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-300 z-50 w-20">
-                {children.map((child) => (
-                  <li key={child.label}>
-                    <NavLink
-                      to={child.path}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#007CC3]"
-                    >
-                      {child.label}
-                    </NavLink>
-                  </li>
-                ))}
-              </ul>
-            )}
           </motion.li>
         ))}
       </motion.ul>
+
+      <button
+        className="sm:hidden text-gray-700"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {isOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+
+    
+      <motion.div
+        initial={{ x: "100%" }}
+        animate={{ x: isOpen ? "0%" : "100%" }}
+        transition={{ type: "spring", stiffness: 100, damping: 20 }}
+        className="fixed top-0 right-0 h-full w-2/3 bg-white shadow-lg z-40 sm:hidden flex flex-col p-6"
+      >
+        {navLinks.map(({ label, path }) => (
+          <NavLink
+            key={label}
+            to={path}
+            onClick={() => setIsOpen(false)}
+            className={({ isActive }) =>
+              `py-3 border-b transition ${
+                isActive ? "text-[#007CC3]" : "text-black"
+              }`
+            }
+          >
+            {label}
+          </NavLink>
+        ))}
+      </motion.div>
     </motion.div>
   );
 };
