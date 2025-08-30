@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { subsidiariesData } from "../assets/assets";
+import { useNavigate } from "react-router-dom";
 import Title from "./Title";
 
 const headingVariant = {
@@ -24,6 +25,7 @@ const cardVariant = (direction) => ({
 });
 
 const Subsidiaries = () => {
+  const navigate = useNavigate();
   return (
     <div className="bg-[#efefef9c] py-12">
       <motion.div
@@ -75,6 +77,17 @@ const Subsidiaries = () => {
                         {item.details}
                       </p>
                     </blockquote>
+                    <motion.button
+                      variants={{
+                        hidden: { opacity: 0, x: 30 },
+                        visible: { opacity: 1, x: 0 },
+                      }}
+                      transition={{ duration: 0.6 }}
+                      className="h-10 rounded-md px-6 bg-[#3A3B98] text-white hover:bg-[#2a2975]"
+                      onClick={() => navigate("/service")}
+                    >
+                      Read More
+                    </motion.button>
                   </div>
                 </>
               ) : (
@@ -91,6 +104,17 @@ const Subsidiaries = () => {
                         {item.details}
                       </p>
                     </blockquote>
+                    <motion.button
+                      variants={{
+                        hidden: { opacity: 0, x: 30 },
+                        visible: { opacity: 1, x: 0 },
+                      }}
+                      transition={{ duration: 0.6 }}
+                      className="h-10 rounded-md px-6 bg-[#3A3B98] text-white hover:bg-[#2a2975]"
+                      onClick={() => navigate("/service")}
+                    >
+                      Read More
+                    </motion.button>
                   </div>
                   <div>
                     <img

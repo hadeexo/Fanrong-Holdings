@@ -25,7 +25,6 @@ const App = () => {
           </Routes>
           <ConnectSection />
         </main>
-
         <Footer />
       </div>
     </>

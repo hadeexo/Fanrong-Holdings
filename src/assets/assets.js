@@ -34,7 +34,7 @@ export const subsidiariesData = [
     id: 2,
     summary: "Reigning Stars Educational Services Limited",
     details:
-      "Reigning Stars Educational Services Limited is a subsidary of Fanrong Group. We are an Education Agency with global focus and idealogy– we provide consultation and advice to Students who desire to pursue higher education both locally and internationally. We believe that education is a fundamental right and everyone should have access to quality higher education. With this view in mind,",
+      "Reigning Stars Educational Services Limited is a subsidary of Fanrong Group. We are an Education Agency with global focus and idealogy– we provide consultation and advice to Students who desire to pursue higher education both locally and internationally. We believe that education is a fundamental right and everyone should have access to quality higher education.",
     image: Reign,
   },
   {
@@ -70,5 +70,43 @@ export const testimonialData = [
     message:
       "I am also glad to have used your services. You have an amazing support & service team. Thank you!",
     image: person,
+  },
+];
+
+export const serviceData = [
+  {
+    title: "MRM Investment Limited",
+    desc: "MRM, a micro-lending subsidiary of Fanrong Group, provides short-term personal and SME loans to individuals and small businesses. We offer quick access to funds and financial advisory services to support stability and growth.",
+    items: [
+      "Fixed Income Notes",
+      "Eurobond Linked Notes",
+      "Real Estate Linked Notes",
+      "Education Investment Scheme",
+      "Employee Savings Scheme",
+      "Financial Advisory",
+       "Emergency Loan",
+      "Group Lending",
+      "Asset Finance",
+      "SME Business Loan",
+    ],
+  },
+  {
+    title: "Mapout Homes",
+    desc: "Mapout Homes, a subsidiary of Fanrong Group founded in 2021, is dedicated to making homeownership accessible and affordable for all Nigerians. Through innovation, expertise, and value-driven solutions, we address the housing deficit by providing quality homes that serve as shelter, security, and investment.",
+    items: [
+     
+     
+    ],
+  },
+  {
+    title: "Reigning Stars Educational Services Limited",
+    desc: "Transforming education through access to world-class programmes in partnership with Ajayi Crowther University.",
+    items: [
+      "Nusery and Primary School",
+      "Secondary School Education",
+      "Postgraduate Programmes",
+      "Undergraduate Programmes (4/5 years)",
+      "HND Conversion (2 sessions)",
+    ],
   },
 ];
