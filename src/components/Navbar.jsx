@@ -21,7 +21,6 @@ const Navbar = () => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.6,
         ease: "easeOut",
         staggerChildren: 0.15,
       },
@@ -40,18 +39,20 @@ const Navbar = () => {
       animate="visible"
       className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md flex items-center justify-between py-5 px-6 md:px-10 font-medium"
     >
-
       <Link to="/">
         <img src={assets.logo} className="w-12" alt="Logo" />
       </Link>
 
-    
       <motion.ul
         className="hidden sm:flex gap-6 text-sm text-gray-700"
         variants={navVariants}
       >
         {navLinks.map(({ label, path }) => (
-          <motion.li key={label} variants={linkVariants} className="relative group">
+          <motion.li
+            key={label}
+            variants={linkVariants}
+            className="relative group"
+          >
             <NavLink
               to={path}
               className={({ isActive }) =>
@@ -82,7 +83,6 @@ const Navbar = () => {
         {isOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
 
-    
       <motion.div
         initial={{ x: "100%" }}
         animate={{ x: isOpen ? "0%" : "100%" }}
