@@ -5,6 +5,7 @@ import MRM from "./MRM.jpg";
 import Reign from "./Reign.jpg";
 import Home from "./Home.jpg";
 import abt_img from "./abouthead.png";
+import about from "./about.jpg";
 import one from "./oneAbt.jpg";
 import idea from "./idea.jpg";
 import value from "./value.jpeg";
@@ -20,6 +21,7 @@ export const assets = {
   one,
   idea,
   value,
+  about,
 };
 
 export const subsidiariesData = [
@@ -84,7 +86,7 @@ export const serviceData = [
       "Education Investment Scheme",
       "Employee Savings Scheme",
       "Financial Advisory",
-       "Emergency Loan",
+      "Emergency Loan",
       "Group Lending",
       "Asset Finance",
       "SME Business Loan",
@@ -93,10 +95,7 @@ export const serviceData = [
   {
     title: "Mapout Homes",
     desc: "Mapout Homes, a subsidiary of Fanrong Group founded in 2021, is dedicated to making homeownership accessible and affordable for all Nigerians. Through innovation, expertise, and value-driven solutions, we address the housing deficit by providing quality homes that serve as shelter, security, and investment.",
-    items: [
-     
-     
-    ],
+    items: [],
   },
   {
     title: "Reigning Stars Educational Services Limited",

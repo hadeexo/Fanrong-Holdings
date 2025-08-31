@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { assets } from "../assets/assets";
 import { useNavigate } from "react-router-dom";
 
 const WhoWeAre = () => {
@@ -52,7 +53,7 @@ const WhoWeAre = () => {
           <div className="absolute w-80 h-80 md:w-[600px] md:h-[600px] bg-[#007cc31b] rounded-full z-15" />
 
           <img
-            src="src\assets\about.jpg"
+            src={assets.about}
             alt="Who We Are"
             className="relative z-10 w-72 h-72 md:w-[500px] md:h-[500px] object-cover rounded-full shadow-lg"
           />
