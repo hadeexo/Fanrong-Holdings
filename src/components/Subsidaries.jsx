@@ -28,6 +28,7 @@ const Subsidiaries = () => {
   const navigate = useNavigate();
   return (
     <div className="bg-[#efefef9c] py-12">
+    
       <motion.div
         className="text-center"
         variants={headingVariant}
@@ -40,38 +41,30 @@ const Subsidiaries = () => {
         </div>
       </motion.div>
 
+      
       <div className="w-full md:w-[85%] mx-auto flex flex-col gap-20">
         {subsidiariesData.map((item, index) => {
-          const isEven = index % 2 === 0;
-          const isMiddle = index === 1; // 👈 middle card
+          const isEven = index % 2 === 0; 
           const direction = isEven ? "left" : "right";
 
           return (
             <motion.div
               key={item.id}
-              className={`grid grid-cols-1 md:grid-cols-2 items-center gap-10`}
+              className="mx-2 grid grid-cols-1 md:grid-cols-2 items-center gap-10"
               variants={cardVariant(direction)}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
             >
-              {isMiddle ? (
+              {isEven ? (
                 <>
-                  <div className="order-2 md:order-1">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="rounded-lg shadow-lg w-[80%] object-cover"
-                    />
-                  </div>
-
-                  <div className="order-1 md:order-2 space-y-4">
+                 
+                  <div className="order-2 md:order-1 space-y-4">
                     <div className="mt-2 flex items-center gap-2">
                       <h4 className="text-lg font-bold text-gray-500">
                         {item.summary}
                       </h4>
                     </div>
-
                     <blockquote className="mt-4 border-l-4 border-[#007CC3] pl-4">
                       <p className="text-black leading-relaxed">
                         {item.details}
@@ -88,17 +81,35 @@ const Subsidiaries = () => {
                     >
                       Read More
                     </motion.button>
+                  </div>
+
+                  {/* Image Right (desktop), Top (mobile) */}
+                  <div className="order-1 md:order-2">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="rounded-lg shadow-lg w-[80%] object-cover"
+                    />
                   </div>
                 </>
               ) : (
                 <>
-                  <div className="space-y-4">
+                  {/* Image Left (desktop), Top (mobile) */}
+                  <div className="order-1">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="rounded-lg shadow-lg w-[80%] object-cover"
+                    />
+                  </div>
+
+                  {/* Text Right (desktop), Below (mobile) */}
+                  <div className="order-2 space-y-4">
                     <div className="mt-2 flex items-center gap-2">
                       <h4 className="text-lg font-bold text-gray-500">
                         {item.summary}
                       </h4>
                     </div>
-
                     <blockquote className="mt-4 border-l-4 border-[#007CC3] pl-4">
                       <p className="text-black leading-relaxed">
                         {item.details}
@@ -115,13 +126,6 @@ const Subsidiaries = () => {
                     >
                       Read More
                     </motion.button>
-                  </div>
-                  <div>
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="rounded-lg shadow-lg w-[80%] object-cover"
-                    />
                   </div>
                 </>
               )}

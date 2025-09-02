@@ -6,16 +6,29 @@ const Connect = () => {
   const [email, setEmail] = useState("");
   const [statusMessage, setStatusMessage] = useState("");
 
-  const onSubmitHandler = (event) => {
+  const onSubmitHandler = async (event) => {
     event.preventDefault();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
     if (emailRegex.test(email)) {
-      toast.success("Thank you for subscribing!");
-      setStatusMessage("");
-      setEmail("");
+      try {
+        const res = await fetch("http://localhost:5000/subscribe", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email }),
+        });
+
+        if (res.ok) {
+          toast.success("Thank you for subscribing!");
+          setEmail("");
+        } else {
+          toast.error("Subscription failed, try again later.");
+        }
+      } catch (error) {
+        toast.error("Server error. Please try again.");
+      }
     } else {
       toast.error("Please enter a valid email address.");
-      setStatusMessage("Please enter a valid email address.");
     }
   };
 

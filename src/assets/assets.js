@@ -9,6 +9,8 @@ import about from "./about.jpg";
 import one from "./oneAbt.jpg";
 import idea from "./idea.jpg";
 import value from "./value.jpeg";
+import sky from "./sky.jpg";
+import ltd from "./ltd.jpg";
 
 export const assets = {
   hero_img,
@@ -22,29 +24,40 @@ export const assets = {
   idea,
   value,
   about,
+  sky,
+  ltd,
 };
 
 export const subsidiariesData = [
   {
     id: 1,
-    summary: "MRM Investment Limited",
+    summary: "Mapout Resources Management Ltd (MRM)",
     details:
-      "Mapout is a subsidiary of Fanrong group which offers an investment solutions to various categories of clients by adopting both conventional and innovative strategies in the management of resources entrusted for a maximum returns to all the stakeholders.",
+      "Mapout Resources Management (MRM) is a wholly owned subsidiary of Fanrong Group, created to provide innovative and inclusive investment and lending solutions. By blending conventional approaches with forward-looking strategies, MRM manages resources with a clear focus—maximizing value for all stakeholders.",
     image: MRM,
   },
   {
     id: 2,
-    summary: "Reigning Stars Educational Services Limited",
+    summary: "MRM Investment Ltd",
     details:
-      "Reigning Stars Educational Services Limited is a subsidary of Fanrong Group. We are an Education Agency with global focus and idealogy– we provide consultation and advice to Students who desire to pursue higher education both locally and internationally. We believe that education is a fundamental right and everyone should have access to quality higher education.",
-    image: Reign,
+      "MRM Investment Ltd is the wealth management arm of Fanrong Group, dedicated to creating sustainable value for investors. We accept funds from a diverse range of clients and strategically channel them into carefully selected businesses and investment opportunities. By combining deep expertise, market insight, and disciplined risk management, MRM Investment Ltd is committed to delivering consistent, superior returns while safeguarding the interests of all stakeholders.",
+    image: ltd,
   },
+
   {
     id: 3,
     summary: "Mapout Homes",
     details:
-      "Mapout Homes is a subsidary of Fanrong Group.We are an indigenous company established in 2021 with a drive to provide practical solutions towards making homeownership accessible and affordable to Nigerians across social status. With innovative research & development approach and a team of highly qualified and experienced professionals.",
+      "Mapout Homes is a proud subsidiary of Fanrong Group, established in 2022 with a clear mandate: to make homeownership accessible and affordable for Nigerians across all social classes.",
     image: Home,
+  },
+
+  {
+    id: 3,
+    summary: "Reigning Stars Educational Services Ltd",
+    details:
+      "Reigning Stars Educational Services Ltd is the education arm of Fanrong Group, committed to advancing human capital development from primary to tertiary levels. Our mission is to provide quality, affordable, and accessible education through innovative methods of teaching, learning, and administration.",
+    image: Reign,
   },
 ];
 
@@ -77,7 +90,7 @@ export const testimonialData = [
 
 export const serviceData = [
   {
-    title: "MRM Investment Limited",
+    title: "Mapout Resources Management Ltd (MRM)",
     desc: "MRM, a micro-lending subsidiary of Fanrong Group, provides short-term personal and SME loans to individuals and small businesses. We offer quick access to funds and financial advisory services to support stability and growth.",
     items: [
       "Fixed Income Notes",

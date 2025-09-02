@@ -17,10 +17,10 @@ const Footer = () => {
         <div>
           <img src={assets.logo} alt="fanrong logo" className="mb-4 w-20" />
           <p className="text-gray-medium">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
-            voluptatibus nesciunt quia libero exercitationem reprehenderit qui
-            reiciendis, velit laboriosam vitae suscipit minus a! Odit
-            perspiciatis veniam unde est, dolorum similique.
+            Fanrong Holdings is a dynamic principal investment company
+            headquartered in Nigeria, with strategic interests in finance,
+            education, and real estate—three critical sectors shaping the
+            nation’s economic growth.
           </p>
           <div className="flex space-x-3 mt-4 mb-5">
             {[FaLinkedinIn, FaFacebookF, FaInstagram, FaTwitter].map(

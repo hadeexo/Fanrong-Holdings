@@ -22,16 +22,16 @@ const WhoWeAre = () => {
             Shaping Futures
           </h2>
           <p className="text-[#686868] leading-relaxed">
-            At Fanrong Holdings, we turn visions into lasting value. From real
-            estate and education to financial services and technology, we invest
-            in opportunities that shape a better future. Guided by integrity,
-            innovation, and impact, we empower communities, drive sustainable
-            growth, and create prosperity that stands the test of time.
+            Fanrong Holdings is a principal investment company in Nigeria, with
+            strategic interests in finance, education, and real estate. Guided
+            by innovation and strong governance, we create long-term value while
+            contributing to national development.
           </p>
           <p className="text-[#686868] leading-relaxed">
-            We believe that true success lies in fostering partnerships,
-            embracing innovation, and delivering excellence in every venture we
-            undertake.
+            By strategically deploying resources across finance, education, and
+            real estate, the company not only generates superior returns for its
+            stakeholders but also contributes to Nigeria’s socio-economic
+            advancement.
           </p>
 
           <button
