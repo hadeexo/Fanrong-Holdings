@@ -79,7 +79,7 @@ export default function Subsidiaries() {
         </div>
 
         <div className="space-y-6">
-          {subsidiaries.map((sub) => (
+          {subsidiaries.map((sub, i) => (
             <div
               key={sub.title}
               className="bg-white shadow-md rounded-2xl overflow-hidden border border-gray-100"
