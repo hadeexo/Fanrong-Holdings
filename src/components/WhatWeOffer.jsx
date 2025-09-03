@@ -1,4 +1,3 @@
-import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { ChevronDown, Landmark, Wallet, BookOpen, Home } from "lucide-react";
 
@@ -6,7 +5,7 @@ const subsidiaries = [
   {
     title: "Mapout Resources Management Ltd (MRM)",
     desc: "Wholly owned subsidiary of Fanrong Group, providing inclusive investment and lending solutions. MRM focuses on short-term personal loans, SME financing, and financial advisory to empower individuals and businesses.",
-    icon: <Wallet className="w-6 h-6 text-[#3A3B98]" />,
+    icon: <Wallet className="w-26 h-26 md:w-16 md:h-16 text-[#3A3B98]" />,
     items: [
       "Employee Group Loans",
       "SME Loans",
@@ -20,7 +19,7 @@ const subsidiaries = [
   {
     title: "MRM Investment Ltd",
     desc: "The wealth management arm of Fanrong Group, dedicated to sustainable value creation. It accepts funds from diverse clients and channels them into carefully selected businesses and opportunities.",
-    icon: <Landmark className="w-6 h-6 text-[#3A3B98]" />,
+    icon: <Landmark className="w-26 h-26 md:w-16 md:h-16 text-[#3A3B98]" />,
     items: [
       "Fixed Income Notes",
       "Eurobond-Linked Notes",
@@ -34,7 +33,7 @@ const subsidiaries = [
   {
     title: "Reigning Stars Educational Services Ltd",
     desc: "The education arm of Fanrong Group, advancing human capital development from primary to tertiary levels. Reigning Stars offers quality, affordable, and accessible education for future-ready leaders.",
-    icon: <BookOpen className="w-6 h-6 text-[#3A3B98]" />,
+    icon: <BookOpen className="w-26 h-26 md:w-16 md:h-16 text-[#3A3B98]" />,
     items: [
       "Primary Education (Reigning Stars School)",
       "Secondary Education (Reigning Stars College)",
@@ -47,7 +46,7 @@ const subsidiaries = [
   {
     title: "Mapout Homes",
     desc: "Subsidiary established to make homeownership accessible and affordable. With innovative research and a professional team, Mapout Homes delivers sustainable housing and real estate solutions.",
-    icon: <Home className="w-6 h-6 text-[#3A3B98]" />,
+    icon: <Home className="w-26 h-26 md:w-16 md:h-16 text-[#3A3B98]" />,
     items: [
       "Property Development",
       "Facility Management",
@@ -62,74 +61,66 @@ const subsidiaries = [
   },
 ];
 
-export default function Subsidiaries() {
+export default function App() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section className="py-20 bg-gray-50 px-6 md:px-12">
-      <div className="max-w-6xl mx-auto space-y-12">
-        <div className="text-center space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#3A3B98]">
-            Our Subsidiaries
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            The Fanrong Group operates through strategic subsidiaries, each
-            focused on delivering impact in finance, education, and real estate.
-          </p>
-        </div>
+    <div className="bg-gray-50 py-24 px-6 md:px-12 rounded-lg m-4">
+      <h2 className="text-4xl md:text-5xl font-bold text-[#3A3B98] text-center mb-4">
+        Our Services
+      </h2>
+      <p className="text-gray-600 max-w-2xl mx-auto text-lg text-center mb-12">
+        The Fanrong Group operates through strategic subsidiaries, each focused
+        on delivering impact in finance, education, and real estate.
+      </p>
 
-        <div className="space-y-6">
-          {subsidiaries.map((sub, i) => (
-            <div
-              key={sub.title}
-              className="bg-white shadow-md rounded-2xl overflow-hidden border border-gray-100"
+      <div className="max-w-6xl mx-auto space-y-6">
+        {subsidiaries.map((sub, i) => (
+          <div
+            key={sub.title}
+            className="bg-white shadow-md rounded-2xl overflow-hidden border border-gray-100"
+          >
+            <button
+              onClick={() => setOpenIndex(openIndex === i ? null : i)}
+              className="w-full px-6 py-5 flex justify-between items-center text-left"
             >
-              <button
-                onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full px-6 py-5 flex justify-between items-center text-left"
-              >
-                <div className="flex items-start gap-3">
-                  {sub.icon}
-                  <div>
-                    <h3 className="text-xl font-semibold text-[#3A3B98]">
-                      {sub.title}
-                    </h3>
-                    <p className="text-gray-500 text-sm">{sub.desc}</p>
-                  </div>
+              <div className="flex items-start gap-3">
+                {sub.icon}
+                <div>
+                  <h3 className="text-xl font-semibold text-[#3A3B98]">
+                    {sub.title}
+                  </h3>
+                  <p className="text-gray-500 text-sm">{sub.desc}</p>
                 </div>
-                <ChevronDown
-                  className={`w-6 h-6 text-[#3A3B98] transform transition-transform duration-300 ${
-                    openIndex === i ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
+              </div>
+              <ChevronDown
+                className={`w-26 h-26 md:w-6 md:h-6 text-[#3A3B98] transition-transform duration-300 ${
+                  openIndex === i ? "rotate-180" : ""
+                }`}
+              />
+            </button>
 
-              <AnimatePresence initial={false}>
-                {openIndex === i && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.4 }}
-                    className="px-6 pb-6"
+            <div
+              className={`grid transition-all duration-400 ease-in-out ${
+                openIndex === i
+                  ? "grid-rows-[1fr] opacity-100"
+                  : "grid-rows-[0fr] opacity-0"
+              }`}
+            >
+              <ul className="mt-3 grid sm:grid-cols-2 gap-3 overflow-hidden px-6 pb-6">
+                {sub.items.map((item) => (
+                  <li
+                    key={item}
+                    className="bg-[#f0f4ff] text-[#3A3B98] px-4 py-3 rounded-lg text-sm font-medium hover:bg-[#e0e7ff] transition"
                   >
-                    <ul className="mt-3 grid sm:grid-cols-2 gap-3">
-                      {sub.items.map((item) => (
-                        <li
-                          key={item}
-                          className="bg-[#f0f4ff] text-[#3A3B98] px-4 py-3 rounded-lg text-sm font-medium hover:bg-[#e0e7ff] transition"
-                        >
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 }

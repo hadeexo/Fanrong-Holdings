@@ -28,7 +28,6 @@ const Subsidiaries = () => {
   const navigate = useNavigate();
   return (
     <div className="bg-[#efefef9c] py-12">
-    
       <motion.div
         className="text-center"
         variants={headingVariant}
@@ -41,10 +40,9 @@ const Subsidiaries = () => {
         </div>
       </motion.div>
 
-      
       <div className="w-full md:w-[85%] mx-auto flex flex-col gap-20">
         {subsidiariesData.map((item, index) => {
-          const isEven = index % 2 === 0; 
+          const isEven = index % 2 === 0;
           const direction = isEven ? "left" : "right";
 
           return (
@@ -58,7 +56,6 @@ const Subsidiaries = () => {
             >
               {isEven ? (
                 <>
-                 
                   <div className="order-2 md:order-1 space-y-4">
                     <div className="mt-2 flex items-center gap-2">
                       <h4 className="text-lg font-bold text-gray-500">
@@ -83,7 +80,6 @@ const Subsidiaries = () => {
                     </motion.button>
                   </div>
 
-                  {/* Image Right (desktop), Top (mobile) */}
                   <div className="order-1 md:order-2">
                     <img
                       src={item.image}
@@ -94,7 +90,6 @@ const Subsidiaries = () => {
                 </>
               ) : (
                 <>
-                  {/* Image Left (desktop), Top (mobile) */}
                   <div className="order-1">
                     <img
                       src={item.image}
@@ -103,7 +98,6 @@ const Subsidiaries = () => {
                     />
                   </div>
 
-                  {/* Text Right (desktop), Below (mobile) */}
                   <div className="order-2 space-y-4">
                     <div className="mt-2 flex items-center gap-2">
                       <h4 className="text-lg font-bold text-gray-500">

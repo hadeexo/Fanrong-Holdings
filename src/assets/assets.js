@@ -53,7 +53,7 @@ export const subsidiariesData = [
   },
 
   {
-    id: 3,
+    id: 4,
     summary: "Reigning Stars Educational Services Ltd",
     details:
       "Reigning Stars Educational Services Ltd is the education arm of Fanrong Group, committed to advancing human capital development from primary to tertiary levels. Our mission is to provide quality, affordable, and accessible education through innovative methods of teaching, learning, and administration.",
