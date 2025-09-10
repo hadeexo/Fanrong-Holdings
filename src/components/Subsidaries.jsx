@@ -63,7 +63,7 @@ const Subsidiaries = () => {
                       </h4>
                     </div>
                     <blockquote className="mt-4 border-l-4 border-[#007CC3] pl-4">
-                      <p className="text-black leading-relaxed">
+                      <p className="text-black text-justify leading-relaxed">
                         {item.details}
                       </p>
                     </blockquote>
@@ -105,7 +105,7 @@ const Subsidiaries = () => {
                       </h4>
                     </div>
                     <blockquote className="mt-4 border-l-4 border-[#007CC3] pl-4">
-                      <p className="text-black leading-relaxed">
+                      <p className="text-black text-justify leading-relaxed">
                         {item.details}
                       </p>
                     </blockquote>

@@ -28,6 +28,8 @@
   --gray-dark: #686868;
 }
 
+
+
 button {
   cursor: pointer;
   transition: .5s ease;
@@ -40,3 +42,20 @@ button:hover{
 
 
 
+
+.heroo {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+
+
+@media screen and (max-width: 640px) {
+  .heroo {
+        filter: blur(6px);
+    transform: scale(1.05);
+  }
+}

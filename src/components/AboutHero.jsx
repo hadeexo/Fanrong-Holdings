@@ -27,7 +27,7 @@ const AboutHero = () => {
 
           <div className="bg-[#3A3B98] text-white rounded-lg shadow-xl p-8">
             <h3 className="text-xl font-bold mb-4">Our History</h3>
-            <p className="text-sm leading-relaxed mb-4 text-white/90">
+            <p className="text-sm text-justify leading-relaxed mb-4 text-white/90">
               For over 8 years, Fanrong Holdings has been shaping futures across
               real estate, education, and financial services. From delivering
               affordable housing projects that close the shelter gap, to driving
@@ -48,7 +48,7 @@ const AboutHero = () => {
             className="order-2 md:order-1 bg-[#3A3B98] text-white rounded-lg shadow-xl p-8"
           >
             <h3 className="text-xl font-bold mb-4">Our Vision</h3>
-            <p className="text-sm leading-relaxed mb-4 text-white/90">
+            <p className="text-sm text-justify leading-relaxed mb-4 text-white/90">
               To be a leading African principal investment company that creates
               enduring value through strategic investments in key sectors, while
               empowering communities and driving sustainable economic growth.
@@ -93,7 +93,7 @@ const AboutHero = () => {
             className="bg-[#3A3B98] text-white rounded-lg shadow-xl p-8"
           >
             <h3 className="text-xl font-bold mb-4">Our Values</h3>
-            <p className="text-sm leading-relaxed mb-4 text-white/90">
+            <p className="text-sm text-justify leading-relaxed mb-4 text-white/90">
               At Fanrong Holdings, we stand on pillars of integrity, excellence,
               and partnership. Our values guide every decision—from nurturing
               local economies to fostering authentic stakeholder relationships—

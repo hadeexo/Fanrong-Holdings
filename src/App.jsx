@@ -7,6 +7,8 @@ import ConnectSection from "./components/ConnectSection";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
+import Board from "./pages/Board";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
   return (
@@ -17,9 +19,11 @@ const App = () => {
         <Navbar />
 
         <main className="flex-grow">
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/about/board" element={<Board />} />
             <Route path="/service" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

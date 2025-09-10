@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { TrendingUp, Shield, Trophy, Headset } from "lucide-react";
 import { assets } from "../assets/assets";
 import { useNavigate } from "react-router-dom";
@@ -9,9 +10,10 @@ export function Hero() {
   return (
     <section className="relative py-20 mt-10 overflow-hidden">
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center heroo"
         style={{ backgroundImage: `url(${assets.hero_img})` }}
       />
+
       <div className="absolute inset-0 bg-gradient-to-t from-[#00AEEF]/20 to-[#3B2D85]/20 z-0" />
 
       <div className="relative container mx-auto px-4">
@@ -36,6 +38,7 @@ export function Hero() {
               </span>
             </motion.div>
 
+            {/* Title */}
             <motion.h1
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}

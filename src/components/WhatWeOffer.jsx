@@ -4,8 +4,11 @@ import { ChevronDown, Landmark, Wallet, BookOpen, Home } from "lucide-react";
 const subsidiaries = [
   {
     title: "Mapout Resources Management Ltd (MRM)",
-    desc: "Wholly owned subsidiary of Fanrong Group, providing inclusive investment and lending solutions. MRM focuses on short-term personal loans, SME financing, and financial advisory to empower individuals and businesses.",
-    icon: <Wallet className="w-26 h-26 md:w-16 md:h-16 text-[#3A3B98]" />,
+    shortDesc:
+      "Mapout Resources Management (MRM) is a wholly owned subsidiary of Fanrong Group, created to provide innovative and inclusive investment and lending solutions. By blending conventional approaches with forward-looking strategies, MRM manages resources with a clear focus—maximizing value for all stakeholders.",
+    details:
+      "As the Group’s micro- and nano-lending arm, MRM provides short-term personal loans, SME financing, and tailored financial services for salaried individuals, self-employed professionals, and small businesses. Our fast-access funding and financial advisory services help meet urgent needs while supporting long-term growth and stability.",
+    icon: <Wallet className="w-8 h-8 md:w-10 md:h-10 text-[#3A3B98]" />,
     items: [
       "Employee Group Loans",
       "SME Loans",
@@ -18,8 +21,11 @@ const subsidiaries = [
   },
   {
     title: "MRM Investment Ltd",
-    desc: "The wealth management arm of Fanrong Group, dedicated to sustainable value creation. It accepts funds from diverse clients and channels them into carefully selected businesses and opportunities.",
-    icon: <Landmark className="w-26 h-26 md:w-16 md:h-16 text-[#3A3B98]" />,
+    shortDesc:
+      "The wealth management arm of Fanrong Group, creates sustainable value for investors by channeling funds into carefully selected businesses and opportunities.",
+    details:
+      "Leveraging expertise, market insight, and disciplined risk management, MRM Investment Ltd delivers consistent, superior returns while protecting stakeholder interests.",
+    icon: <Landmark className="w-8 h-8 md:w-10 md:h-10 text-[#3A3B98]" />,
     items: [
       "Fixed Income Notes",
       "Eurobond-Linked Notes",
@@ -32,8 +38,11 @@ const subsidiaries = [
   },
   {
     title: "Reigning Stars Educational Services Ltd",
-    desc: "The education arm of Fanrong Group, advancing human capital development from primary to tertiary levels. Reigning Stars offers quality, affordable, and accessible education for future-ready leaders.",
-    icon: <BookOpen className="w-26 h-26 md:w-16 md:h-16 text-[#3A3B98]" />,
+    shortDesc:
+      "The education arm of Fanrong Group, dedicated to advancing human capital development from primary to tertiary levels.",
+    details:
+      "Our mission is to provide quality, affordable, and accessible education through innovative approaches to teaching, learning, and administration. By combining rigorous academics with practical skills, we nurture future-ready leaders equipped to drive innovation, entrepreneurship, and socio-economic transformation.",
+    icon: <BookOpen className="w-8 h-8 md:w-10 md:h-10 text-[#3A3B98]" />,
     items: [
       "Primary Education (Reigning Stars School)",
       "Secondary Education (Reigning Stars College)",
@@ -45,8 +54,11 @@ const subsidiaries = [
   },
   {
     title: "Mapout Homes",
-    desc: "Subsidiary established to make homeownership accessible and affordable. With innovative research and a professional team, Mapout Homes delivers sustainable housing and real estate solutions.",
-    icon: <Home className="w-26 h-26 md:w-16 md:h-16 text-[#3A3B98]" />,
+    shortDesc:
+      "A subsidiary of Fanrong Group founded in 2022, committed to making homeownership affordable and accessible for Nigerians across all social classes.",
+    details:
+      "Backed by research, innovation, and a skilled team, Mapout Homes redefines housing as more than shelter—creating security, stability, and long-term investment value.",
+    icon: <Home className="w-8 h-8 md:w-10 md:h-10 text-[#3A3B98]" />,
     items: [
       "Property Development",
       "Facility Management",
@@ -61,7 +73,7 @@ const subsidiaries = [
   },
 ];
 
-export default function App() {
+export default function Services() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
@@ -74,7 +86,7 @@ export default function App() {
         on delivering impact in finance, education, and real estate.
       </p>
 
-      <div className="max-w-6xl mx-auto space-y-6">
+      <div className="max-w-6xl mx-auto space-y-6 text-justify">
         {subsidiaries.map((sub, i) => (
           <div
             key={sub.title}
@@ -82,22 +94,29 @@ export default function App() {
           >
             <button
               onClick={() => setOpenIndex(openIndex === i ? null : i)}
-              className="w-full px-6 py-5 flex justify-between items-center text-left"
+              className="w-full px-6 py-5 flex justify-between items-start text-left"
             >
-              <div className="flex items-start gap-3">
-                {sub.icon}
+             
+              <div className="flex items-start gap-4 flex-1">
+                <div className="flex-shrink-0 self-start">{sub.icon}</div>
                 <div>
                   <h3 className="text-xl font-semibold text-[#3A3B98]">
                     {sub.title}
                   </h3>
-                  <p className="text-gray-500 text-sm">{sub.desc}</p>
+                  <p className="text-gray-500 text-sm text-justify mt-1">
+                    {sub.shortDesc}
+                  </p>
                 </div>
               </div>
-              <ChevronDown
-                className={`w-26 h-26 md:w-6 md:h-6 text-[#3A3B98] transition-transform duration-300 ${
-                  openIndex === i ? "rotate-180" : ""
-                }`}
-              />
+
+              
+              <div className="flex-shrink-0 self-start ml-4">
+                <ChevronDown
+                  className={`w-5 h-5 text-[#3A3B98] transition-transform duration-300 ${
+                    openIndex === i ? "rotate-180" : ""
+                  }`}
+                />
+              </div>
             </button>
 
             <div
@@ -107,16 +126,21 @@ export default function App() {
                   : "grid-rows-[0fr] opacity-0"
               }`}
             >
-              <ul className="mt-3 grid sm:grid-cols-2 gap-3 overflow-hidden px-6 pb-6">
-                {sub.items.map((item) => (
-                  <li
-                    key={item}
-                    className="bg-[#f0f4ff] text-[#3A3B98] px-4 py-3 rounded-lg text-sm font-medium hover:bg-[#e0e7ff] transition"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <div className="overflow-hidden px-6 pb-6">
+                <p className="text-gray-600 text-sm text-justify mb-4">
+                  {sub.details}
+                </p>
+                <ul className="grid sm:grid-cols-2 gap-3">
+                  {sub.items.map((item) => (
+                    <li
+                      key={item}
+                      className="bg-[#f0f4ff] text-[#3A3B98] px-4 py-3 rounded-lg text-sm font-medium hover:bg-[#e0e7ff] transition"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         ))}
