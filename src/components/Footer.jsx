@@ -75,11 +75,10 @@ const Footer = () => {
               <span>1, Akerele str, Off Diya Rd, Ifako, Lagos State</span>
             </li>
             <li className="flex items-center gap-2">
-              <FaPhone className="text-[#3A3B98]" /> +234 806 249 3408
+              <FaPhone className="text-[#3A3B98]" /> +234 808 585 6990
             </li>
             <li className="flex items-center gap-2">
-              <FaEnvelope className="text-[#3A3B98]" />{" "}
-              fanrongholdings@gmail.com
+              <FaEnvelope className="text-[#3A3B98]" /> admin@farongholdings.com
             </li>
           </ul>
         </div>

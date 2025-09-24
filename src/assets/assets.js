@@ -11,6 +11,11 @@ import idea from "./idea.jpg";
 import value from "./value.jpeg";
 import sky from "./sky.jpg";
 import ltd from "./ltd.jpg";
+import board from "./board.jpeg";
+import aby from "./ABAYOMI.PNG";
+import Ad from "./Ad.jpeg";
+import ntor from "./ntor.jpeg";
+import Ola from "./MrOla.jpg";
 
 export const assets = {
   hero_img,
@@ -26,6 +31,11 @@ export const assets = {
   about,
   sky,
   ltd,
+  board,
+  aby,
+  Ad,
+  ntor,
+  Ola,
 };
 
 export const subsidiariesData = [
@@ -122,3 +132,52 @@ export const testimonialData = [
 //     ],
 //   },
 // ];
+
+export const boardMembers = [
+  {
+    name: "Jane Smith",
+    role: "Managing Director",
+    img: assets.person,
+    bio: "Jane is an accomplished executive with deep expertise in financial strategy, education, and real estate development. Her leadership has been instrumental in expanding Fanrong Holdings’ portfolio and creating opportunities across emerging markets.",
+  },
+  {
+    name: "Michael Johnson",
+    role: "Non-Executive Director",
+    img: assets.person,
+    bio: "Michael brings extensive knowledge in regulatory compliance and investment advisory. With a strong background in law and business, he ensures that governance remains at the heart of the Group’s operations.",
+  },
+    {
+    name: "Michael Johnson",
+    role: "Non-Executive Director",
+    img: assets.person,
+    bio: "Michael brings extensive knowledge in regulatory compliance and investment advisory. With a strong background in law and business, he ensures that governance remains at the heart of the Group’s operations.",
+  },
+  
+];
+export const management = [
+  {
+    name: "John Doe",
+    role: "Chairman",
+    img: assets.Ola,
+    bio: "John has over 20 years of experience in investment management and corporate governance. He has led multiple organizations in finance, real estate, and education, driving sustainable growth and long-term value creation for stakeholders. His vision and leadership continue to shape Fanrong Holdings into a dynamic principal investment company. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at orci ut massa porttitor laoreet. Vivamus posuere metus id eros iaculis, eget condimentum ligula luctus.",
+  },
+  {
+    name: "Jane Smith",
+    role: "Managing Director",
+    img: assets.ntor,
+    bio: "Jane is an accomplished executive with deep expertise in financial strategy, education, and real estate development. Her leadership has been instrumental in expanding Fanrong Holdings’ portfolio and creating opportunities across emerging markets.",
+  },
+  {
+    name: "Michael Johnson",
+    role: "Non-Executive Director",
+    img: assets.Ad,
+    bio: "Michael brings extensive knowledge in regulatory compliance and investment advisory. With a strong background in law and business, he ensures that governance remains at the heart of the Group’s operations.",
+  },
+  {
+    name: "John Doe",
+    role: "Chairman",
+    img: assets.aby,
+    bio: "John has over 20 years of experience in investment management and corporate governance. He has led multiple organizations in finance, real estate, and education, driving sustainable growth and long-term value creation for stakeholders. His vision and leadership continue to shape Fanrong Holdings into a dynamic principal investment company. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at orci ut massa porttitor laoreet. Vivamus posuere metus id eros iaculis, eget condimentum ligula luctus.",
+  },
+  
+];
