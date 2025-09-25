@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 
 // ✅ Configure Nodemailer (cPanel SMTP)
 const transporter = nodemailer.createTransport({
-  host: "mail.fanrong.com", // cPanel SMTP host
+  host: "admin@fanrongholdings.com", // cPanel SMTP host
   port: 465, // SSL
   secure: true,
   auth: {
@@ -30,8 +30,8 @@ app.post("/subscribe", async (req, res) => {
 
   try {
     await transporter.sendMail({
-      from: `"Newsletter Signup" <info@fanrong.com>`,
-      to: "info@fanrong.com",
+      from: `"Newsletter Signup" <admin@fanrongholdings.com>`,
+      to: "admin@fanrongholdings.com",
       subject: "New Newsletter Subscription",
       html: `
         <h3>New Newsletter Subscription</h3>
@@ -62,7 +62,7 @@ app.post("/contact", async (req, res) => {
   try {
     await transporter.sendMail({
       from: `"${name}" <${email}>`,
-      to: "info@fanrong.com",
+      to: "admin@fanrongholdings.com",
       subject: "New Contact Form Message",
       html: `
         <h3>New Contact Form Submission</h3>
