@@ -1,5 +1,9 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "https://fanrongholdings.com/$1", "permanent": true }
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://fanrongholdings.com/$1",
+      "permanent": true
+    }
   ]
 }
